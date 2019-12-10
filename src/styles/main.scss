@@ -15,10 +15,27 @@
     font-style: normal;
     }
 @font-face{
+    font-family: 'Gotham';
+    src: url('../fonts/Gotham/GothamPro.eot') format('eot'),
+    url('../fonts/Gotham/GothamPro.woff') format('woff'),
+    url('../fonts/Gotham/GothamPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+@font-face{
     font-family: 'Gotham Bold';
     src: url('../fonts/Gotham-Bold/GothamPro-Bold.eot') format('eot'),
     url('../fonts/Gotham-Bold/GothamPro-Bold.woff') format('woff'),
     url('../fonts/Gotham-Bold/GothamPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    }
+
+@font-face{
+    font-family: 'RobotoBold Condensed';
+    src: url('../fonts/RobotoBoldCond/RobotoCondensed-Bold.eot') format('eot'),
+    url('../fonts/RobotoBoldCond/RobotoCondensed-Bold.woff') format('woff'),
+    url('../fonts/RobotoBoldCond/RobotoCondensed-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     }
@@ -32,8 +49,18 @@
     font-style: normal;
     }
 
+@font-face{
+    font-family: 'Gotham Book';
+    src: url('../fonts/Gotham-Book/GothamBook.eot') format('eot'),
+    url('../fonts/Gotham-Book/GothamBook.woff') format('woff'),
+    url('../fonts//Gotham-Book/GothamBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
 $light-color: #f5f5f5;
 $color-blue:#11749e;
+$color-blue-light:#2e85aa;
 
 h1, h2, h3, h4, p {
     padding: 0;
@@ -53,8 +80,8 @@ body {
 
 .page {
     position: relative;
-    padding-top: 161px;
-    padding-bottom: 160px;
+    padding-top: 100px;
+    padding-bottom: 126px;
     &-main {
         background-image: url(../img/Background_header.png);
         background-repeat: no-repeat;
@@ -121,11 +148,13 @@ body {
     display: flex;
     justify-content: center;
     &__title {
+        position: absolute;
         font-size: 37.55px;
-        font-family: 'Gotham Medium';
+        font-family: 'Gotham';
         text-transform: uppercase;
-        text-align: center;
         color: $light-color;
+        margin-left: 280px;
+        margin-top: 67px;
         &--main {
             font-family: 'Gotham Bold';
             text-transform: uppercase;
@@ -135,6 +164,7 @@ body {
             margin-top: 237px;
             span {
                 display: block;
+                font-family: 'Gotham';
                 text-align: center;
                 font-size: 24.79px;
                 letter-spacing: 17px;
@@ -142,9 +172,46 @@ body {
             }
         }
     }
+    &__img {
+        position: relative;
+        left: 42.5%
+    }
 }
 
 .block-about {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 67px;
+    &__btn {
+        width: 133px;
+        height: 133px;
+        border: none;
+        background-color: $color-blue-light;
+        border-radius: 100%;
+        line-height: 0;
+        font-size: 0;
+        cursor: pointer;
+        margin-bottom: 19px;
+        &:focus {
+            outline: none;
+        }
+
+    }
+    &-item {
+        text-align: center;
+        color: $light-color;
+        h4 {
+            text-transform: uppercase;
+            font-family: 'Gotham';
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        p {
+            font-family: 'Gotham Book';
+            font-size: 15px;
+            letter-spacing: 0.4px;
+            line-height: 24px;
+            
+        }
+    }
 }
