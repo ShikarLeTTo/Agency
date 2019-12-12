@@ -78,14 +78,14 @@ body {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-    &-blue {
-        // background-color: $color-blue;
+    &-news {
+        max-width: 100%;
+        padding: 0;
     }
 }
 
 .page {
     position: relative;
-    text-align: center;
     padding-top: 100px;
     padding-bottom: 126px;
     &__title {
@@ -125,6 +125,7 @@ body {
     }
     &-blue {
         background-color: $color-blue;
+        text-align: center;
         &__title {
             position: absolute;
             font-size: 37.55px;
@@ -141,15 +142,21 @@ body {
         &-small {
             background-color: $color-blue;
             text-align: start;
+            padding-bottom: 153px;
         }
     }
     &-news {
-        padding-top: 100px;
-        padding-bottom: 126px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
     &-blog {
         padding-top: 100px;
         padding-bottom: 107px;
+        text-align: center;
+    }
+    &-features {
+        background-image: url(../img/BG_features.png);
+        padding-bottom: 94px;
     }
 }
 .header {
@@ -266,50 +273,32 @@ body {
     }
 }
 .block-news {
-    &-item { 
-        display: grid;
-        grid-template-areas: "b b a a" "c c d d";
-        background-repeat: no-repeat;
-        background-size: cover;
-        &__img1 {
-            background-image: url(../img/img_news1.png);
-            grid-area: a;
-        }
-        &__info1 {
-            background-color: $dark-color;
-            grid-area: b;
-        }
-        &__img2 {
-            background-image: url(../img/img_news2.png);
-            grid-area: c;
-        }
-        &__info2 {
-            background-color: $light-color;
-            grid-area: d;
-        }
-    }
-}
-.grid {
     display: grid;
-    grid-template-areas: "b b a a" "c c d d";
+    grid-template-areas: "a a b b" "c c d d";
     &-item {
         background-repeat: no-repeat;
         background-size: cover;
-        &__img1 {
-            background-image: url(../img/img_news1.png);
-            grid-area: a;
-        }
-        &__info1 {
+        &-info1 {
             background-color: $dark-color;
+            grid-area: a;
+            height: 448px;
+        }
+        &-img1 {
+            display: block;
+            height: 448px;
+            background-image: url(../img/img_news1.png);
             grid-area: b;
         }
-        &__img2 {
+        &-img2 {
+            display: block;
+            height: 448px;
             background-image: url(../img/img_news2.png);
             grid-area: c;
         }
-        &__info2 {
+        &-info2 {
             background-color: $light-color;
             grid-area: d;
+            height: 448px;
         }
     }
 }
@@ -349,8 +338,41 @@ body {
 .block-quick {
     display: flex;
     justify-content: space-between;
+    margin-top: 6px;
     &-item {
         display: flex;
+        max-width: 555px;
+        &__img {
+            display: block;
+            margin-top: 8px;
+        }
+        p {
+            flex-basis: 82%;
+            font-family: 'Gotham Book';
+            font-size: 15px;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-left: 34px;
+        }
     }
-
+}
+.block-features {
+    display: flex;
+    justify-content: space-around;
+    &-text {
+        margin-top: 123px;
+        margin-left: 9px;
+        h4 {
+            font-family: 'Gotham';
+            font-size: 25px;
+            text-transform: uppercase;
+            color: $light-color;
+            margin-bottom: 33px;
+        }
+        &-btn {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
 }
